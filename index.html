@@ -2,99 +2,182 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Me Apresentando</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maisa | Desenvolvedora</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
 body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background: linear-gradient(180deg,#000,#020b1a,#000);
-  color:white;
-  text-align:center;
+background:linear-gradient(180deg,#000,#020617,#000);
+color:white;
 }
 
-/* TÍTULO */
-h1{
-  margin-top:70px;
-  font-size:42px;
-  color:#00ccff;
-  text-shadow:0 0 25px #00ccff;
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#020617;
+border-bottom:1px solid #0ea5e9;
 }
 
-/* TEXTO */
-.intro{
-  width:85%;
-  max-width:700px;
-  margin:20px auto;
-  font-size:19px;
-  color:#ccc;
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#38bdf8;
 }
 
-/* BOTÃO */
-button{
-  margin-top:10px;
-  background:#00ccff;
-  border:none;
-  padding:15px 40px;
-  font-size:18px;
-  border-radius:40px;
-  cursor:pointer;
-  transition:.3s;
-  box-shadow:0 0 20px #00ccff;
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
 }
 
-button:hover{
-  transform:scale(1.1);
-  background:#0099cc;
+nav a:hover{
+color:#38bdf8;
 }
 
-/* CARD SOBRE */
-#sobre{
-  display:none;
-  margin-top:40px;
-  justify-content:center;
+/* HERO */
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:50px;
+color:#38bdf8;
+text-shadow:0 0 25px #0ea5e9;
+}
+
+.hero p{
+margin-top:20px;
+font-size:20px;
+color:#cbd5e1;
+max-width:600px;
+}
+
+.botao{
+margin-top:35px;
+padding:15px 40px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:linear-gradient(45deg,#0ea5e9,#38bdf8);
+color:white;
+transition:.3s;
+box-shadow:0 0 20px #0ea5e9;
+}
+
+.botao:hover{
+transform:scale(1.07);
+}
+
+/* SOBRE */
+.sobre{
+display:none;
+padding:80px 20px;
+text-align:center;
+animation:fade 1s ease;
 }
 
 .card{
-  background:rgba(0,0,0,0.7);
-  padding:35px;
-  border-radius:25px;
-  max-width:700px;
-  font-size:18px;
-  color:#ddd;
-  box-shadow:0 0 30px #00ccff33;
-  animation:fade 1s ease;
+max-width:700px;
+margin:auto;
+background:#020617;
+padding:40px;
+border-radius:25px;
+border:1px solid #0ea5e9;
+box-shadow:0 0 30px #0ea5e933;
 }
 
-/* ANIMAÇÃO */
+.card h2{
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.card p{
+color:#cbd5e1;
+font-size:18px;
+line-height:1.6;
+}
+
 @keyframes fade{
-  from{opacity:0; transform:translateY(25px);}
-  to{opacity:1; transform:translateY(0);}
+from{opacity:0; transform:translateY(20px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+border-top:1px solid #0ea5e9;
+color:#64748b;
+margin-top:60px;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+<div class="logo">Maisa.dev</div>
+<div>
+<a href="#">Início</a>
+<a href="#" onclick="abrir()">Sobre</a>
+</div>
+</nav>
+
+<section class="hero">
 <h1>ME APRESENTANDO</h1>
 
-<p class="intro">
-Olá, está procurando alguém pra criar uma logo, site, cardápio digital para sua loja, restaurante e etc? Você está procurando no lugar certo!
+<p>
+Olá! Está procurando alguém pra criar logo, site ou cardápio digital para sua loja, restaurante ou negócio?
+Você está no lugar certo!
 </p>
 
-<button onclick="abrir()">Sobre mim</button>
+<button class="botao" onclick="abrir()">Sobre mim</button>
+</section>
 
-<div id="sobre">
-  <div class="card">
-    Olá, eu me chamo Maisa, sou uma programadora iniciante e quero fazer engenharia de software.
-    Quero realizar meu sonho de conseguir meu PC gamer, então me aprofundei nessa área de programação pra poder ganhar dinheiro.
-    Eu não cobro caro e meus trabalhos são ótimos!
-  </div>
+<section class="sobre" id="sobre">
+<div class="card">
+
+<h2>Sobre mim</h2>
+
+<p>
+Olá, eu me chamo Maisa. Sou uma programadora em formação e sonho em cursar Engenharia de Software.
+Estou me aprofundando na área para conquistar meu primeiro PC gamer e crescer profissionalmente.<br><br>
+
+Trabalho com dedicação, criatividade e preços acessíveis — e entrego resultados de qualidade!
+</p>
+
 </div>
+</section>
+
+<footer>
+© 2026 — Desenvolvido por Maisa
+</footer>
 
 <script>
 function abrir(){
- document.getElementById("sobre").style.display="flex";
+document.getElementById("sobre").style.display="block";
+window.scrollTo({
+top: document.body.scrollHeight,
+behavior:"smooth"
+});
 }
 </script>
 
